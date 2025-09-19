@@ -1,0 +1,113 @@
+:root{
+  --bg: #fbead3;      /* soft bisque-like background */
+  --card: #ffffff;
+  --accent:royalblue;
+  --muted: #555;
+}
+
+*{box-sizing: border-box}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--muted);
+  -webkit-font-smoothing:antialiased;
+}
+
+.page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+/* card layout */
+.card{
+  display:flex;
+  gap:20px;
+  width:760px;
+  max-width:95%;
+  background:var(--card);
+  border-radius:12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  padding:22px;
+  align-items:center;
+}
+
+/* image */
+.avatar{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  flex-shrink:0;
+  border:4px solid rgba(0,0,0,0.04);
+}
+
+.btn:hover{
+  background: darkorange;
+}
+
+.btn.ghost:hover{
+  background: rgba(0,0,0,0.05);
+}
+
+/* content */
+.card-content{flex:1}
+.name{
+  margin:0 0 6px 0;
+  color:#111;
+  font-size:1.4rem;
+}
+.card.two{
+  border: 2px solid var(--accent);
+  background: #f0f8ff;
+}
+.role{
+  margin:0 0 12px 0;
+  color:var(--accent);
+  font-weight:600;
+}
+.bio{
+  margin:0 0 18px 0;
+  line-height:1.5;
+  color:var(--muted);
+}
+.card:hover{
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+
+}
+
+/* actions */
+.actions{display:flex; gap:12px}
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  background:var(--accent);
+  color:white;
+}
+.btn.ghost{
+  background:transparent;
+  color:var(--accent);
+  border:2px solid rgba(0,0,0,0.06);
+}
+
+.btn, .btn.ghost{
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* responsive: stack on small screens */
+@media (max-width:600px){
+  .card{
+    flex-direction:column;
+    text-align:center;
+  }
+  .avatar{width:120px;height:120px}
+  .actions{justify-content:center}
+}
