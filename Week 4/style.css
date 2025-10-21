@@ -1,0 +1,168 @@
+/*1. RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* GENERAL */
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* 2. NAVBAR*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #333;
+  color: white;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: royalblue;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Active state for mobile menu */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+}
+
+/*3. HERO SECTION*/
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 60px 40px;
+  gap: 40px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  background: royalblue;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-image {
+  flex: 1;
+}
+
+.hero-image img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/*4. EXTRA SECTIONS / UTILITIES*/
+.section {
+  height: 100vh;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  margin-bottom: 2rem;
+}
+
+/*5. BACK TO TOP BUTTON*/
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: royalblue;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: none;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+#backToTop:hover {
+  background: #1e56e6;
+  transform: translateY(-3px);
+}
+
+/*6. MEDIA QUERIES (RESPONSIVE)*/
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-links {
+    flex-direction: column;
+    display: none;
+    background: #444;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Hero */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .hero-image img {
+    max-width: 80%;
+    margin-top: 1rem;
+  }
+}
