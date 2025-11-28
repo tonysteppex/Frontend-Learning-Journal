@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foodies Hero Section</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html {
+        font-family: "Outfit", sans-serif;
+        color: #212529;
+      }
+
+      .container {
+        width: 1200px;
+        margin: 0 auto;
+        padding: 32px 16px;
+      }
+
+      header {
+        background-color: #f1f3f5;
+        height: 100vh;
+        position: relative;
+
+        background-image: url(hero.jpg);
+        background-size: cover;
+      }
+
+      nav {
+        font-size: 20px;
+        font-weight: 700;
+        display: flex;
+        justify-content: space-between;
+
+        padding-top: 32px;
+      }
+
+      .header-container {
+        width: 1200px;
+        position: absolute;
+
+        /* In relation to parent size */
+        left: 50%;
+        top: 50%;
+
+        /* In relation to element size */
+        transform: translate(-50%, -50%);
+      }
+      .header-container-inner {
+        width: 50%;
+      }
+
+      h1 {
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 32px;
+      }
+
+      p {
+        font-size: 20px;
+        line-height: 1.6;
+        margin-bottom: 48px;
+      }
+
+      .btn:link,
+      .btn:visited {
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+        color: white;
+        background-color: #e67e22;
+        display: inline-block;
+        padding: 16px 32px;
+        border-radius: 8px;
+      }
+
+      h2 {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 48px;
+      }
+
+      section {
+        padding: 96px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <div>LOGO</div>
+        <div>NAVIGATION</div>
+      </nav>
+      <div class="header-container">
+        <div class="header-container-inner">
+          <h1>A healthy meal delivered to your door, every single day</h1>
+          <p>Your gateway to delicious recipes and culinary inspiration.</p>
+          <a href="#" class="btn">Start eating well</a>
+        </div>
+      </div>
+    </header>
+    <section>
+      <div class="container">
+        <h2>Featured Recipies</h2>
+        <p>
+          Explore our handpicked selection of mouth-watering recipes that are
+          sure to delight your taste buds.
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
