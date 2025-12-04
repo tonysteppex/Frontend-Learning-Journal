@@ -44,7 +44,6 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      justify-content: space-between;
       padding: 0 40px
     }
 
@@ -63,10 +62,28 @@
 
     button:last-child {
       background-color: red;
+      margin-left: auto;
     }
 
     section {
       background-color: #e9ecef;
+      padding: 40px;
+
+      overflow: scroll;
+
+      display: flex;
+      flex-direction: column;
+      gap: 40px
+    }
+
+    .email {
+      background-color: #adb5bd;
+      height: 96px;
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     aside {
@@ -84,7 +101,18 @@
     <button>Mark unread</button>
     <button>Delete</button>
   </menu>
-  <section>Inbox</section>
+  <section>
+    <div class="email">Email 1</div>
+    <div class="email">Email 2</div>
+    <div class="email">Email 3</div>
+    <div class="email">Email 4</div>
+    <div class="email">Email 5</div>
+    <div class="email">Email 6</div>
+    <div class="email">Email 7</div>
+    <div class="email">Email 8</div>
+    <div class="email">Email 9</div>
+    <div class="email">Email 10</div>
+  </section>
   <main>Email view</main>
   <aside>Additional info</aside>
 </body>

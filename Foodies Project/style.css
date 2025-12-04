@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Outfit", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+header {
+  background-color: #f1f3f5;
+  height: 100vh;
+  position: relative;
+
+  background-image: url(hero.jpg);
+  background-size: cover;
+}
+
+nav {
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 32px;
+}
+
+.header-container {
+  width: 1200px;
+  position: absolute;
+
+  /* In relation to parent size */
+  left: 50%;
+  top: 50%;
+
+  /* In relation to element size */
+  transform: translate(-50%, -50%);
+}
+
+.header-container-inner {
+  width: 50%;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+
+p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 48px;
+}
+
+.btn:link,
+.btn:visited {
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background-color: #e67e22;
+  display: inline-block;
+  padding: 16px 32px;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 48px;
+}
+
+section {
+  padding: 96px 0;
+}
