@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Foodies Hero Section</title>
+  <title>Foodies</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
@@ -14,28 +14,52 @@
 </head>
 
 <body>
-  <header>
-    <nav class="container">
-      <div>LOGO</div>
-      <div>NAVIGATION</div>
+  <header class="header">
+    <p class="logo">Foodies</p>
+    <nav class="main-nav">
+      <ul class="main-nav-list">
+        <li><a class="main-nav-link" href="#">How it works</a></li>
+        <li><a class="main-nav-link" href="#">Meals</a></li>
+        <li><a class="main-nav-link" href="#">Testimonials</a></li>
+        <li><a class="main-nav-link" href="#">Pricing</a></li>
+        <li><a class="main-nav-link nav-cta" href="#">Sign up</a></li>
+      </ul>
     </nav>
-    <div class="header-container">
-      <div class="header-container-inner">
-        <h1>A healthy meal delivered to your door, every single day</h1>
-        <p>Your gateway to delicious recipes and culinary inspiration.</p>
-        <a href="#" class="btn">Start eating well</a>
-      </div>
-    </div>
   </header>
-  <section>
-    <div class="container">
-      <h2>Featured Recipies</h2>
-      <p>
-        Explore our handpicked selection of mouth-watering recipes that are
-        sure to delight your taste buds.
-      </p>
-    </div>
-  </section>
+
+  <main>
+    <section class="section-hero">
+      <div class="hero">
+        <div class="hero-text-box">
+          <h1 class="heading-primary">
+            A healthy meal delivered to your door, every single day
+          </h1>
+          <p class="hero-description">
+            The smart 365-days-per-year food subscription that will make you eat healthy again. Tailored to your
+            personal
+            tastes and nutritional needs.
+          </p>
+          <a href="#" class="btn btn--full margin-right-sm">Start eating well</a>
+          <a href="#" class="btn btn--outline">Learn more &darr;</a>
+          <div class="delivered-meals">
+            <div class="delivered-imgs">
+              <img src="Images/close-up-portrait-young-african-man-with-stubble.jpg" alt="customer photo" />
+              <img src="Images/portrait-happy-man.jpg" alt="customer photo" />
+              <img src="Images/smiley-african-woman-with-golden-earrings.jpg" alt="customer photo" />
+              <img src="Images/portrait-young-man-wearing-eyeglasses-against-gray-background.jpg"
+                alt="customer photo" />
+              <img src="Images/young-african-american-woman-with-headband-posing.jpg" alt="customer photo" />
+              <img src="Images/model-posing-with-flower-studio.jpg" alt="customer photo" />
+            </div>
+            <p class="delivered-text"><span>250,000+</span>meals delivered last year!</p>
+          </div>
+        </div>
+        <div class="hero-img-box">
+          <img src="Images/hero.png" alt="lady enjoying food" class="hero-image" />
+        </div>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>
