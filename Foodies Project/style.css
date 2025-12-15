@@ -16,8 +16,63 @@ body {
 }
 
 /************************************/
-/***GENERAL COMPONENTS***/
+/***GENERAL REUSABLE COMPONENTS***/
 /************************************/
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  color: #333;
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
 
 /************************************/
 /***HEADER***/
@@ -94,15 +149,6 @@ body {
 .main-nav-link.nav-cta:hover,
 .nav-cta:active {
   background-color: #cf711f;
-}
-
-.heading-primary {
-  font-size: 5.2rem;
-  font-weight: 700;
-  line-height: 1.05;
-  color: #333;
-  letter-spacing: -0.5px;
-  margin-bottom: 3.2rem;
 }
 
 .hero-description {
@@ -192,4 +238,34 @@ btn:visited {
   font-size: larger;
   color: #cf711f;
   font-weight: 700;
+}
+
+/************************************/
+/***HOW IT WORKS SECTION***/
+/************************************/
+.section-how {
+  padding: 9.6rem 0;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.6;
+  margin-top: 1.6rem;
+}
+
+.step-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-img {
+  width: 50%;
 }
