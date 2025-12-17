@@ -279,18 +279,63 @@ btn:visited {
   padding: 9.6rem 0;
 }
 
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.meal:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.meal-content {
+  padding: 3.2rem;
+}
+
+.meal-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  text-transform: uppercase;
+  background-color: #51cf66;
+  color: #555;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 2rem;
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+
+.tag--paleo {
+  background-color: #ffd43b;
+}
+
+.tag--vegan {
+  background-color: #94d82d;
+}
+
 .meal-title {
   font-size: 2.4rem;
   color: #333;
   font-weight: 600;
-  margin-bottom: 1.6rem;
+  margin-bottom: 2rem;
 }
 
 .meal-attributes {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
   font-size: 1.8rem;
   color: #777;
   margin-bottom: 1.6rem;
@@ -300,6 +345,7 @@ btn:visited {
   font-size: 1.8rem;
   display: flex;
   align-items: center;
+  gap: 1.6rem;
 }
 
 .meal-icon {
@@ -312,4 +358,30 @@ btn:visited {
   width: 100%;
   margin-bottom: 2.4rem;
   object-fit: cover;
+}
+
+.meal-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+.meal-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.all-recipes {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-top: 4.8rem;
 }
