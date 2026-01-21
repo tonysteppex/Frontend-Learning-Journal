@@ -20,7 +20,9 @@
 
 <body>
   <header class="header">
-    <p class="logo">Foodies</p>
+    <a class="logo-link" href="#">
+      <p class="logo">Foodies</p>
+    </a>
     <nav class="main-nav">
       <ul class="main-nav-list">
         <li><a class="main-nav-link" href="#">How it works</a></li>
@@ -413,30 +415,30 @@
             <p class="cta-text">
               Healthy, tasty meals delivered to your doorstep. No subscription fees, no hidden costs.
             </p>
-            <div>
-              <form class="cta-form" action="#">
+            <form class="cta-form" action="#">
+              <div>
                 <label for="full-name">Full Name</label>
                 <input id="full-name" type="text" placeholder="Your name" required />
-            </div>
+              </div>
 
-            <div>
-              <label for="email">Email address</label>
-              <input id="email" type="email" placeholder="me@example.com" required />
-            </div>
+              <div>
+                <label for="email">Email address</label>
+                <input id="email" type="email" placeholder="me@example.com" required />
+              </div>
 
-            <div>
-              <label for="select-where">How did you hear about us?</label>
-              <select id="select-where" required>
-                <option value="">Select one</option>
-                <option value="friends">Friends & family</option>
-                <option value="search">Search engine</option>
-                <option value="social">Social media</option>
-                <option value="ad">Advertisement</option>
-                <option value="other">Other</option>
-              </select>
-            </div>
+              <div>
+                <label for="select-where">How did you hear about us?</label>
+                <select id="select-where" required>
+                  <option value="">Please select one option</option>
+                  <option value="friends">Friends & family</option>
+                  <option value="search">Search engine</option>
+                  <option value="social">Social media</option>
+                  <option value="ad">Advertisement</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
 
-            <button class="btn">Sign up now</button>
+              <button class="btn btn--form">Sign up now</button>
             </form>
           </div>
           <div class="cta-img-box" role="img" aria-label="Woman enjoying food"></div>
@@ -444,6 +446,62 @@
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container grid grid--footer">
+      <div class="logo-col"><a href="#" class="logo">Foodies</a>
+        <div class="social-links-col">
+          <ul class="social-links">
+            <li><a class="footer-link" href="#"><ion-icon name="logo-facebook" class="social-icon"></ion-icon></a></li>
+            <li><a class="footer-link" href="#"><ion-icon name="logo-twitter" class="social-icon"></ion-icon></a></li>
+            <li><a class="footer-link" href="#"><ion-icon name="logo-instagram" class="social-icon"></ion-icon></a></li>
+          </ul>
+        </div>
+
+        <p class="copyright">Copyright &copy; 2026 by Foodies. All rights reserved.</p>
+
+
+      </div>
+      <div class="address-col">
+        <p class="footer-heading">Contact us</p>
+        <address class="contacts">
+          623 Harrison St., 2nd Floor, San Francisco, CA 94107<br />
+          <a class="footer-link" href="tel:415-201-6370">415-201-6370</a><br />
+          <a class="footer-link" href="mailto:hello@foodies.com">hello@foodies.com</a>
+        </address>
+      </div>
+
+      <div class="links-col">
+        <p class="footer-heading">Company</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="#">How it works</a></li>
+          <li><a class="footer-link" href="#">Pricing</a></li>
+          <li><a class="footer-link" href="#">Partners</a></li>
+          <li><a class="footer-link" href="#">Carreers</a></li>
+        </ul>
+      </div>
+
+      <div class="links-col">
+        <p class="footer-heading">Account</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="#">Create account</a></li>
+          <li><a class="footer-link" href="#">Sign in</a></li>
+          <li><a class="footer-link" href="#">iOS app</a></li>
+          <li><a class="footer-link" href="#">Android app</a></li>
+        </ul>
+      </div>
+
+      <div class="links-col">
+        <p class="footer-heading">Resources</p>
+        <ul class="footer-nav">
+          <li><a class="footer-link" href="#">Recipe directory</a></li>
+          <li><a class="footer-link" href="#">Help center</a></li>
+          <li><a class="footer-link" href="#">Privacy & terms</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
 </body>
 
 </html>
