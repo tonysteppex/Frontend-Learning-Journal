@@ -21,34 +21,34 @@
 /****************************/
 
 @media (max-width: 75em) {
-  html{
+  html {
     font-size: 56.25%; /* 1rem = 9px */
   }
-  
-.grid {
-  column-gap: 4.8rem;
-  row-gap: 6.4rem;
-}
 
-.heading-secondary {
-  font-size: 3.6rem;
-}
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
 
-.header {
-  padding: 0 3.2rem;
-}
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
 
-.main-nav-list {
-  gap: 3.2rem
-}
+  .header {
+    padding: 0 3.2rem;
+  }
 
-.hero {
-  gap: 4.8rem;
-}
+  .main-nav-list {
+    gap: 3.2rem;
+  }
 
-.testimonials-container {
-  padding: 9.6rem 3.2rem;
-}
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 3.2rem;
+  }
 }
 
 /****************************/
@@ -69,7 +69,8 @@
     width: 60%;
   }
 
-  .hero-text-box, .hero-img-box {
+  .hero-text-box,
+  .hero-img-box {
     text-align: center;
   }
 
@@ -105,4 +106,148 @@
   .btn--form {
     margin-top: 1.2rem;
   }
-} 
+}
+
+/****************************/
+/* Nav Menu 900px (Small Phones) */
+/****************************/
+
+@media (max-width: 900px) {
+  /* 1. SETUP: Make the button visible only on mobile */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999; /* Ensures button sits on top of the open menu */
+  }
+
+  /* 2. THE MENU OVERLAY: Style the nav to cover the whole screen */
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.97); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Optional: Blur effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* 100% of the Viewport Height */
+
+    /* Center the links vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 3. HIDE IT: The default state is hidden */
+    transform: translateX(100%); /* Push it off-screen to the right */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* User can't click invisible links */
+
+    transition: all 0.5s ease-in; /* Smooth animation */
+  }
+
+  /* 4. SHOW IT: When JS adds the .nav-open class */
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0); /* Bring it back to center */
+  }
+
+  /* 5. STYLING LINKS: Make them big for mobile tapping */
+  .main-nav-link {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  .main-nav-list {
+    flex-direction: column; /* Stack links vertically */
+    gap: 4.8rem;
+  }
+}
+
+/************************************/
+/* MOBILE STYLES (Max-Width 900px)  */
+/************************************/
+@media (max-width: 900px) {
+  /* 1. SHOW the mobile button */
+  .btn-mobile-nav {
+    display: block;
+    z-index: 9999;
+  }
+
+  /* 2. Turn the menu into the vertical overlay */
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    /* Layout */
+    transform: translateX(100%); /* Hidden by default */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in;
+
+    /* Hide visually */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column; /* Vertical stack */
+    gap: 4.8rem;
+  }
+
+  .main-nav-link {
+    font-size: 3rem; /* Big text for fingers */
+  }
+
+  /* 3. The "Open" State */
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+/****************************/
+/* BELOW 704px (Small Phones) */
+/****************************/
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    font-size: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .logo-col,
+  .address-col {
+    grid-column: span 3;
+  }
+
+  .links-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+}

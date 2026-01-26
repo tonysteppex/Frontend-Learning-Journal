@@ -128,6 +128,82 @@ body {
   text-decoration: none;
 }
 
+/*MOBILE NAVIGATION*/
+.btn-mobile-nav {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icon-mobile-nav {
+  width: 4.8rem;
+  height: 4.8rem;
+  color: #333;
+}
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+.icon-mobile-nav[name="menu-outline"] {
+  display: block; /* Show menu icon */
+}
+
+.nav-open .icon-mobile-nav[name="close-outline"] {
+  display: block; /* Show close icon */
+}
+
+.nav-open .icon-mobile-nav[name="menu-outline"] {
+  display: none; /* Hide menu icon */
+}
+
+.nav-open .main-nav {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: translate(0);
+}
+
+/************************************/
+/* DESKTOP STYLES (Default)         */
+/************************************/
+
+/* 1. HIDE the mobile button on big screens */
+.btn-mobile-nav {
+  display: none;
+}
+
+/* 2. Style the menu as a horizontal row */
+.main-nav {
+  background-color: transparent; /* No background on desktop */
+  display: flex;
+  align-items: center;
+  gap: 4.8rem; /* Spacing between links */
+
+  /* Resetting mobile overrides if they leaked */
+  position: relative;
+  height: auto;
+  width: auto;
+  transform: none;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.main-nav-list {
+  display: flex;
+  flex-direction: row; /* Horizontal */
+  list-style: none;
+  gap: 3.2rem;
+}
+
+.main-nav-link {
+  font-size: 1.8rem; /* Normal size for desktop */
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+}
+
 /************************************/
 /***HERO SECTION***/
 /************************************/

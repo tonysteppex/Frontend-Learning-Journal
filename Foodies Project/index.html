@@ -32,9 +32,14 @@
         <li><a class="main-nav-link" href="#">Meals</a></li>
         <li><a class="main-nav-link" href="#">Testimonials</a></li>
         <li><a class="main-nav-link" href="#">Pricing</a></li>
-        <li><a class="main-nav-link nav-cta" href="#">Sign up</a></li>
+        <li><a class="main-nav-link nav-cta" href="#">Try for free</a></li>
       </ul>
     </nav>
+
+    <button class="btn-mobile-nav">
+      <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+      <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+    </button>
   </header>
 
   <main>
@@ -61,7 +66,7 @@
               <img src="Images/young-african-american-woman-with-headband-posing.jpg" alt="customer photo" />
               <img src="Images/model-posing-with-flower-studio.jpg" alt="customer photo" />
             </div>
-            <p class="delivered-text"><span>250,000+</span>meals delivered last year!</p>
+            <p class="delivered-text"><span>250,000+ </span>meals delivered last year!</p>
           </div>
         </div>
         <div class="hero-img-box">
@@ -505,6 +510,17 @@
 
     </div>
   </footer>
+  <script>
+    // 1. Select the button and the header element
+    const btnNav = document.querySelector(".btn-mobile-nav");
+    const header = document.querySelector(".header");
+
+    // 2. Add the event listener
+    btnNav.addEventListener("click", function () {
+      // 3. Toggle the "nav-open" class
+      header.classList.toggle("nav-open");
+    });
+  </script>
 </body>
 
 </html>
