@@ -18,22 +18,24 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+  <script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
   <script defer src="JS/script.js"></script>
+
   <title>Foodies</title>
 </head>
 
 <body>
-  <header class="header">
+  <header class="header sticky">
     <a class="logo-link" href="#">
       <p class="logo">Foodies</p>
     </a>
     <nav class="main-nav">
       <ul class="main-nav-list">
-        <li><a class="main-nav-link" href="#">How it works</a></li>
-        <li><a class="main-nav-link" href="#">Meals</a></li>
-        <li><a class="main-nav-link" href="#">Testimonials</a></li>
-        <li><a class="main-nav-link" href="#">Pricing</a></li>
-        <li><a class="main-nav-link nav-cta" href="#">Try for free</a></li>
+        <li><a class="main-nav-link" href="#how">How it works</a></li>
+        <li><a class="main-nav-link" href="#meals">Meals</a></li>
+        <li><a class="main-nav-link" href="#testimonials">Testimonials</a></li>
+        <li><a class="main-nav-link" href="#pricing">Pricing</a></li>
+        <li><a class="main-nav-link nav-cta" href="#cta">Try for free</a></li>
       </ul>
     </nav>
 
@@ -55,8 +57,8 @@
             personal
             tastes and nutritional needs.
           </p>
-          <a href="#" class="btn btn--full margin-right-sm">Start eating well</a>
-          <a href="#" class="btn btn--outline">Learn more &darr;</a>
+          <a href="#cta" class="btn btn--full margin-right-sm">Start eating well</a>
+          <a href="#how" class="btn btn--outline">Learn more &darr;</a>
           <div class="delivered-meals">
             <div class="delivered-imgs">
               <img src="Images/close-up-portrait-young-african-man-with-stubble.jpg" alt="customer photo" />
@@ -76,7 +78,7 @@
       </div>
     </section>
 
-    <section class="section-how">
+    <section class="section-how" id="how">
       <div class="container">
         <span class="subheading">How it works</span>
         <h2 class="heading-secondary">Your daily dose in 3 simple steps</h2>
@@ -129,7 +131,7 @@
       </div>
     </section>
 
-    <section class="section-meals">
+    <section class="section-meals" id="meals">
       <div class="container center-text">
         <span class="subheading">Meals</span>
         <h2 class="heading-secondary">Foodies AI chooses from 5,000+ recipes</h2>
@@ -207,7 +209,7 @@
       </div>
     </section>
 
-    <section class="section-testimonials grid grid--2-cols">
+    <section class="section-testimonials grid grid--2-cols" id="testimonials">
       <div class="testimonials-container">
         <span class="subheading">Testimonials</span>
         <h2 class="heading-secondary">Once you try it, you can't go back</h2>
@@ -319,7 +321,7 @@
       </div>
     </section>
 
-    <section class="section-pricing">
+    <section class="section-pricing" id="pricing">
       <div class="container">
         <span class="subheading">Pricing</span>
         <h2 class="heading-secondary">Eating well, without breaking the bank</h2>
@@ -418,7 +420,7 @@
       </div>
     </section>
 
-    <section class="section-cta">
+    <section class="section-cta" id="cta">
       <div class="container">
         <div class="cta">
           <div class="cta-text-box">
@@ -469,7 +471,8 @@
           </ul>
         </div>
 
-        <p class="copyright">Copyright &copy; <span class="year">2012</span> by Foodies. All rights reserved.</p>
+        <p class="copyright">Copyright &copy; <span class="year-number">2013</span> by Foodies. All rights reserved.
+        </p>
 
 
       </div>
@@ -513,14 +516,6 @@
 
     </div>
   </footer>
-
-  <script>
-    const btnNavEl = document.querySelector(".btn-mobile-nav");
-    const headerEl = document.querySelector(".header");
-    btnNavEl.addEventListener("click", function () {
-      headerEl.classList.toggle("nav-open");
-    });
-  </script>
 </body>
 
 </html>
