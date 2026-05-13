@@ -211,3 +211,19 @@ const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
 console.log(
   `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`,
 );
+
+//the Conditional (Ternary) Operator is a great way to replace simple if/else statements. It is a one-liner that takes three operands: a condition, a value if the condition is true, and a value if the condition is false. The syntax is: condition ? valueIfTrue : valueIfFalse.
+const age3 = 23;
+const drink3 = age3 >= 18 ? "wine 🍷" : "water 💧";
+console.log(drink3);
+
+let drink4;
+if (age3 >= 18) {
+  drink4 = "wine 🍷";
+} else {
+  drink4 = "water 💧";
+}
+console.log(drink4);
+
+
+//Strict mode is a way to opt in to a restricted variant of JavaScript, which can help catch common coding mistakes and "unsafe" actions. It can be enabled by adding the string "use strict"; at the beginning of a script or a function. In strict mode, certain actions that are normally allowed in JavaScript will throw errors, such as assigning values to undeclared variables or using reserved keywords as variable names. This can help improve the quality and security of your code.
