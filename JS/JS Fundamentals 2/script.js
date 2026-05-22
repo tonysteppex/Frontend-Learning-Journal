@@ -197,3 +197,26 @@ for (let i = 0; i < tony.length; i++) {
     if (typeof tony[i] !== "string") continue;
     console.log(tony[i], typeof tony[i]);
 }
+
+//looping backwards and loops in loops is a common task in programming. It allows you to iterate over the elements of an array in reverse order and perform certain actions based on specific conditions. The "break" statement is used to exit a loop prematurely, while the "continue" statement is used to skip the current iteration and move on to the next one.
+
+//looping backwards
+for (let i = tony.length - 1; i >= 0; i--) {
+    console.log(i, tony[i]);
+}
+
+//loops in loops
+for (let exercise = 1; exercise <= 3; exercise++) {
+    console.log(`--- Starting exercise ${exercise} ---`);
+    for (let rep = 1; rep <= 5; rep++) {
+        console.log(`Exercise ${exercise}: Lifting weights repetition ${rep} 🏋️‍♀️`);
+    }
+}
+
+//while loop is a programming construct that allows you to repeat a block of code while a certain condition is true. It is used to perform repetitive tasks and iterate over collections of data.
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE: Lifting weights repetition ${rep} 🏋️‍♀️`);
+    rep++;
+}
