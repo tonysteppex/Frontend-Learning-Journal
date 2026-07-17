@@ -1,5 +1,6 @@
 const projectMarquee = document.getElementById('project-marquee');
 const skillsMarquee = document.getElementById('skills-marquee');
+const yearContainer = document.getElementById('current-year');
 
 if (projectMarquee) {
     const projectContent = projectMarquee.innerHTML;
@@ -9,4 +10,8 @@ if (projectMarquee) {
 if (skillsMarquee) {
     const skillContent = skillsMarquee.innerHTML;
     skillsMarquee.innerHTML = skillContent + skillContent + skillContent;
+}
+
+if (yearContainer) {
+    yearContainer.textContent = new Date().getFullYear();
 }
