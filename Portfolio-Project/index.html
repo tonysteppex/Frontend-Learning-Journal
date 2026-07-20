@@ -11,22 +11,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="#home" title="Home"><img src="Images/home-svgrepo-com.svg" alt="Home" class="nav-icon"></a>
-
-        <span class="divider">|</span>
-
-        <a href="#projects" title="Projects">Projects</a>
-        <a href="#resume" title="Resume" target="_blank">Resume</a>
-        <a href="https://github.com/tonysteph" title="Github" target="_blank"><img src="Images/github-svgrepo-com.svg" alt="Github" class="nav-icon"></a>
-        <a href="mailto:stephentony77@gmail.com" class="btn">Email<img src="Images/arrow-right-svgrepo-com.svg" alt="Send" class="btn-icon"></a>
-    </nav>
+    <div id="nav-placeholder"></div>
 
     <header id="home" class="hero">
         <div class="available-wrap"><span class="status-dot"></span>AVAILABLE FOR WORK</div>
-        <h1>I build products people rely on.</h1>
-        <p class="subtitle">I am a Product Design Engineer specializing in Mobile, AI, Web systems. I take your ideas and turn them into reality.</p>
-        
+        <div class="hero-content">
+            <h1>Designing Digital Products That Actually Make Sense.</h1>
+            <p class="subtitle">I design clear, simple layouts that guide your audience exactly where they need to go, making their experience smooth and enjoyable.</p>
+        </div>
         <div class="marquee-wrapper">
           <div class="marquee-content" id="project-marquee">
             <img src="Images/MacBook Air (2022).png" alt="CourseVault Design" class="marquee-img">
@@ -37,9 +29,9 @@
     </header>
 
     <section id="about" class="about-section">
-        <h2>About</h2>
-        <p>I like to design solid and scalable products with exceptional user experiences. I have five years of experience in the field and have been recognised by Contra as one of the best in my location.</p>
-        <p>I am currently interested in the intersection of user experience and technical art for the gaming industry.</p>
+        <h2>Designing with a Business Mindset</h2>
+        <p>For the past five years, I have worked across the entire spectrum of digital product creation.I start by mapping out clear user experiences in Figma and finish by building the final front-end structure. Because I handle visual design and  understand development, I prevent the common miscommunications that happen when handing a project off to a separate coding team.</p>
+        <p>For the future, I am interested in the intersection of user experience and technical art for the gaming industry.</p>
     </section>
 
     <section id="projects" class="projects-section">
@@ -49,24 +41,24 @@
                 <img src="Images/MacBook Air (2022).png" alt="IPPIS Design" class="card-img">
                 <div class="card-content">
                     <h3>IPPIS Website Redesign</h3>
-                    <p>A total overhaul of the Integrated Personnel and Payroll Information System (IPPIS) website redesign.</p>
+                    <p>Redesigned the primary payroll portal for over one million federal employees, turning a frustrating legacy system into a responsive, self-service information hub.</p>
                     <a href="ippis.html" class="btn">View Project <img src="Images/arrow-right-svgrepo-com.svg" alt="View Project" class="btn-icon"></a>
                 </div>
             </div>
             <div class="card">
-                <img src="Images/MacBook Air (2022).png" alt="Fourcore Dashboard" class="card-img">
+                <img src="Images/MacBook Air (2022).png" alt="Omega Search Dashboard" class="card-img">
                 <div class="card-content">
                     <h3>Omega Search Interface</h3>
-                    <p>An AI-powered interface </p>
-                    <a href="#" class="btn">View Project <img src="Images/arrow-right-svgrepo-com.svg" alt="View Project" class="btn-icon"></a>
+                    <p>Designed a unified search platform that aggregates scattered taxpayer data, allowing tax auditors to view complete financial profiles and flag liabilities in seconds.</p>
+                    <a href="omega.html" class="btn">View Project <img src="Images/arrow-right-svgrepo-com.svg" alt="View Project" class="btn-icon"></a>
                 </div>
             </div>
             <div class="card">
-                <img src="Images/MacBook Air (2022).png" alt="Omega Search Interface" class="card-img">
+                <img src="Images/MacBook Air (2022).png" alt="State PAYE Dashboard" class="card-img">
                 <div class="card-content">
-                    <h3>Omega Search Interface</h3>
-                    <p>Created an intuitive search interface for Omega, improving search efficiency and user satisfaction.</p>
-                    <a href="#" class="btn">View Project <img src="Images/arrow-right-svgrepo-com.svg" alt="View Project" class="btn-icon"></a>
+                    <h3>State PAYE Actualization</h3>
+                    <p>Designed an enterprise revenue intelligence portal connecting state and federal agencies to automate payroll audits and recover missing tax remittances.</p>
+                    <a href="delta-paye.html" class="btn">View Project <img src="Images/arrow-right-svgrepo-com.svg" alt="View Project" class="btn-icon"></a>
                 </div>
             </div>
         </div>
@@ -77,8 +69,10 @@
     </section>
 
     <section id="skills" class="skills-section">
-        <h2>How Can I Help?</h2>
-        <p>I can assist you with designing and developing user-friendly websites and applications, ensuring they are both visually appealing and highly functional.</p>
+        <div class="max-width-wrap">
+            <h2>How Can I Help?</h2>
+            <p>I can assist you with designing and developing user-friendly websites and applications, ensuring they are both visually appealing and highly functional.</p>
+        </div>
         <div class="marquee-wrapper">
             <div class="marquee-content" id="skills-marquee">
                 <img src="Images/figma.svg" alt="Figma" class="skill-icon">
@@ -95,23 +89,14 @@
     </section>
     
     <section id="contact" class="contact-section">
-        <h2>Get in touch</h2>
-        <p>If you would like to work with me, please reach out via email or connect with me on LinkedIn.</p>
+        <div class="max-width-wrap">
+            <h2>Get in touch</h2>
+            <p>If you would like to work with me, please reach out via email.</p>
+        </div>
         <a href="mailto:stephentony77@gmail.com" class="btn">Email Me<img src="Images/arrow-right-svgrepo-com.svg" alt="Email Me" class="btn-icon"></a>
     </section>
 
-    <section id="footer" class="footer-section">
-        <div class="footer-content">
-            <div class="footer-top-divider"></div>
-            <div class="footer-links-wrap">
-            <a href="https://github.com/tonysteph" title="Github" target="_blank"><img src="Images/github-svgrepo-com.svg" alt="Github" class="footer-icon"></a>
-            <a href="mailto:stephentony77@gmail.com" title="Email" target="_blank"><img src="Images/send-mail-svgrepo-com.svg" alt="Email" class="footer-icon"></a>
-            <a href="https://linkedin.com/in/tonystephen" title="Linkedin" target="_blank"><img src="Images/linkedin-svgrepo-com.svg" alt="LinkedIn" class="footer-icon"></a>
-         </div>
-         <div class="footer-bottom-divider"></div>
-         <p>&copy; <span id="current-year"></span> Tony Stephen. All rights reserved.</p>
-         </div>
-    </section>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
 </body>
