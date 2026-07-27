@@ -28,3 +28,13 @@ function loadComponent(elementId, filePath) {
 
 loadComponent('nav-placeholder', 'nav.html');
 loadComponent('footer-placeholder', 'footer.html');
+
+window.addEventListener('scroll', () => {
+    const parallaxImages = document.querySelectorAll('.parallax-img');
+
+    parallaxImages.forEach(img => {
+        const distanceToTop = img.getBoundingClientRect().top;
+
+        img.style.transform = `translateY(${distanceToTop * -0.2}px)`;
+    });
+});
