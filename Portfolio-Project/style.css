@@ -696,7 +696,7 @@ h4 {
 
     .featured-icon {
         margin-bottom: 0;
-        margin-right: 15px;
+        margin-right: 5px;
         flex-shrink: 0;
     }
 
@@ -740,8 +740,13 @@ h4 {
         text-align: center;
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
     }
+
+    .footer-icon {
+    width: 30px;
+    height: 30px;
+}
 }
 
 /* 3. Extra Small Screens / Phones (max-width: 480px) */

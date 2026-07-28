@@ -17,7 +17,7 @@ function loadComponent(elementId, filePath) {
     .then(data =>{
         document.getElementById(elementId).innerHTML = data;
 
-        if (elementId === 'footer-placholder') {
+        if (elementId === 'footer-placeholder') {
             const yearContainer = document.getElementById('current-year');
             if (yearContainer) {
                 yearContainer.textContent = new Date().getFullYear();
