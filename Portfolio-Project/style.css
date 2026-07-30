@@ -352,12 +352,6 @@ h4 {
     transform: translateX(6px);
 }
 
-.view-more-container {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-
 .skills-section {
     text-align: center;
     padding: 80px 0;
@@ -390,7 +384,11 @@ h4 {
 
 .contact-section {
     text-align: center; 
-    padding-bottom: 100px;
+    border: var(--card-border);
+    background-color: var(--accent-color);
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 5px rgba(0,0,0,0.05);
+    border-radius: 12px;
 }
 
 .contact-section p {
@@ -400,11 +398,11 @@ h4 {
 
 .footer-section {
     text-align: center;
-    padding: 40px 20px;
+    padding: 40px;
 }
 
 .footer-section p {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: #555555;
 }
 
@@ -412,7 +410,7 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 10px
 }
 
 .footer-links-wrap {
@@ -702,8 +700,9 @@ h4 {
 
     /* --- Contact Section & Buttons --- */
     .contact-section {
-        padding: 40px 15px;
+        padding: 50px 20px;
         text-align: center;
+        width: fit-content;
     }
 
     .btn {
