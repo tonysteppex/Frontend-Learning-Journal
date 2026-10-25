@@ -1,0 +1,17 @@
+{
+  "name": "updated-portfolio",
+  "version": "1.0.0",
+  "description": "Tony Stephen Portfolio",
+  "main": "script.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "Tony Stephen",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^8.3.5"
+  }
+}

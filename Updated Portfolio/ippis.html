@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4F1EA">
+    <meta name="description" content="A case study exploring a clearer, responsive IPPIS public-service portal experience by Tony Stephen.">
+
+    <title>IPPIS Website Redesign | Tony Stephen</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div id="nav-placeholder"></div>
+
+    <main id="main" class="new-project-container">
+
+        <!-- Breadcrumb -->
+        <div class="project-breadcrumb mono">
+            <a href="index.html">Portfolio</a>
+            <span aria-hidden="true">/</span>
+            <span>Case Study 01</span>
+        </div>
+
+        <!-- Project heading -->
+        <header class="project-title-wrap">
+            <div class="title-left">
+                <p class="eyebrow">Public Sector · Digital Service Redesign</p>
+
+                <h1>IPPIS Website Redesign</h1>
+
+                <p class="project-role">Product Design Engineer</p>
+            </div>
+
+            <div class="title-right">
+                <p class="project-year">2025</p>
+            </div>
+        </header>
+
+        <!-- Project overview -->
+        <section class="project-description" aria-label="Project overview">
+            <p>
+                The Integrated Personnel and Payroll Information System handles payroll for more than 1.1 million federal employees, but its public-facing portal was difficult to navigate and lacked a responsive mobile experience. I explored a clearer, more accessible interface that brings key self-service tasks and support pathways into focus.
+            </p>
+
+            <div class="prototype btn-wrap">
+                <a
+                    href="http://138.68.91.89:8010/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                >
+                    View Prototype
+                    <span class="button-arrow" aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Project information -->
+        <section class="case-overview-grid" aria-label="Project details">
+
+            <div class="case-overview-item">
+                <span class="mono">MY ROLE</span>
+                <strong>Product Design</strong>
+            </div>
+
+            <div class="case-overview-item">
+                <span class="mono">PLATFORM</span>
+                <strong>Responsive Web</strong>
+            </div>
+
+            <div class="case-overview-item">
+                <span class="mono">CORE FOCUS</span>
+                <strong>Self-Service &amp; Navigation</strong>
+            </div>
+
+            <div class="case-overview-item">
+                <span class="mono">DELIVERABLES</span>
+                <strong>Portal, Enrollment, Support</strong>
+            </div>
+
+        </section>
+
+        <!-- Main project visual -->
+        <figure class="parallax-container project-hero-image">
+            <img
+                src="Images/ippis-pro1.jpg"
+                alt="A selected screen from the redesigned IPPIS website concept"
+                class="parallax-img"
+                fetchpriority="high"
+            >
+        </figure>
+
+        <!-- Problem -->
+        <section class="case-section case-problem">
+
+            <div class="case-section-label">
+                <span class="section-number mono">01</span>
+                <span class="eyebrow">The Challenge</span>
+            </div>
+
+            <div class="case-section-main">
+                <h2>A Public-Service Portal Shouldn’t Feel Like A Maze.</h2>
+
+                <p class="case-lead">
+                    The redesign started with a straightforward question: can people find the right service without needing to understand the system behind it?
+                </p>
+
+                <div class="challenge-grid">
+
+                    <article class="challenge-card">
+                        <span class="mono">01 / FINDABILITY</span>
+                        <h3>Unclear Navigation</h3>
+                        <p>
+                            Important information and user actions needed more visible, predictable paths through the site.
+                        </p>
+                    </article>
+
+                    <article class="challenge-card">
+                        <span class="mono">02 / ACCESS</span>
+                        <h3>Limited Mobile Support</h3>
+                        <p>
+                            The experience needed to adapt to smaller screens so essential tasks remained usable away from a desktop.
+                        </p>
+                    </article>
+
+                    <article class="challenge-card">
+                        <span class="mono">03 / SUPPORT</span>
+                        <h3>Scattered Help Journeys</h3>
+                        <p>
+                            Enrollment and complaints needed clearer routes, with support options easier to understand and locate.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Design approach -->
+        <section class="case-section case-approach">
+
+            <div class="case-section-label">
+                <span class="section-number mono">02</span>
+                <span class="eyebrow">Design Approach</span>
+            </div>
+
+            <div class="case-section-main">
+                <h2>Make The Next Step Obvious.</h2>
+
+                <p class="case-lead">
+                    I focused on reducing the amount of interpretation required from users, bringing the information architecture and interface closer to the way people approach their tasks.
+                </p>
+
+                <div class="decision-grid">
+
+                    <article class="decision-card">
+                        <div class="decision-illustration decision-hierarchy" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <i></i>
+                        </div>
+
+                        <h3>Clearer Information Hierarchy</h3>
+
+                        <p>
+                            Give key services more prominence and structure pages so users can scan before they commit to a path.
+                        </p>
+                    </article>
+
+                    <article class="decision-card">
+                        <div class="decision-illustration decision-flow" aria-hidden="true">
+                            <span>Start</span>
+                            <i></i>
+                            <span>Task</span>
+                            <i></i>
+                            <span>Done</span>
+                        </div>
+
+                        <h3>Task-Focused Journeys</h3>
+
+                        <p>
+                            Make enrollment, complaints, and support feel like clear user journeys instead of disconnected destinations.
+                        </p>
+                    </article>
+
+                    <article class="decision-card">
+                        <div class="decision-illustration decision-responsive" aria-hidden="true">
+                            <span></span>
+                            <span></span>
+                            <i></i>
+                        </div>
+
+                        <h3>Responsive By Design</h3>
+
+                        <p>
+                            Use flexible layouts, consistent spacing, and readable content across desktop and mobile breakpoints.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Interface gallery -->
+        <section class="case-section case-screens">
+
+            <div class="case-section-label">
+                <span class="section-number mono">03</span>
+                <span class="eyebrow">Interface Screens</span>
+            </div>
+
+            <div class="case-section-main">
+                <h2>Selected Design Explorations.</h2>
+
+                <p class="case-lead">
+                    A look at selected screens from the interface work. These are presented as design explorations, not as measured production outcomes.
+                </p>
+
+                <div class="case-screen-grid">
+
+                    <figure class="case-screen-item">
+                        <img
+                            src="Images/ippis-pro2.jpg"
+                            alt="Second selected IPPIS interface design screen"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span class="mono">SCREEN 02</span>
+                            <span>Interface Exploration</span>
+                        </figcaption>
+                    </figure>
+
+                    <figure class="case-screen-item">
+                        <img
+                            src="Images/ippis-pro3.jpg"
+                            alt="Third selected IPPIS interface design screen"
+                            loading="lazy"
+                        >
+
+                        <figcaption>
+                            <span class="mono">SCREEN 03</span>
+                            <span>Interface Exploration</span>
+                        </figcaption>
+                    </figure>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Outcome -->
+        <section class="case-outcome">
+
+            <div class="case-outcome-mark" aria-hidden="true">✳</div>
+
+            <div>
+                <p class="eyebrow">Design Outcome</p>
+
+                <h2>A More Direct Route To Essential Tasks.</h2>
+
+                <p>
+                    The concept brings enrollment, complaints, and support into a more coherent responsive experience. The emphasis is on clearer navigation and task completion paths. Quantified usability or business results were not supplied for this project, so no performance figures are claimed here.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Related projects -->
+        <section class="project-suggestions" aria-labelledby="more-projects-title">
+
+            <div class="section-label">
+                <span class="section-number mono">04</span>
+                <span class="eyebrow">Keep Exploring</span>
+            </div>
+
+            <h2 id="more-projects-title">More Selected Work.</h2>
+
+            <div class="grid-container">
+
+                <article class="card">
+                    <a
+                        class="card-image-link"
+                        href="omega.html"
+                        aria-label="View Omega Search Interface"
+                    >
+                        <div class="card-image-wrap">
+                            <img
+                                src="Images/os-main.jpg"
+                                alt="Omega Search dashboard preview"
+                                class="card-img"
+                                loading="lazy"
+                            >
+                        </div>
+                    </a>
+
+                    <div class="card-content">
+
+                        <div class="card-meta">
+                            <span class="project-category mono">CIVIC TECH</span>
+                            <span class="card-year mono">4CORE</span>
+                        </div>
+
+                        <h3>Omega Search Interface</h3>
+
+                        <p>
+                            One search experience for reviewing complex taxpayer records.
+                        </p>
+
+                        <a href="omega.html" class="card-link">
+                            View Case Study
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+                </article>
+
+                <article class="card">
+                    <a
+                        class="card-image-link"
+                        href="delta-paye.html"
+                        aria-label="View State PAYE Actualization"
+                    >
+                        <div class="card-image-wrap">
+                            <img
+                                src="Images/ds-main.jpg"
+                                alt="State PAYE dashboard preview"
+                                class="card-img"
+                                loading="lazy"
+                            >
+                        </div>
+                    </a>
+
+                    <div class="card-content">
+
+                        <div class="card-meta">
+                            <span class="project-category mono">REVENUE MANAGEMENT</span>
+                            <span class="card-year mono">4CORE</span>
+                        </div>
+
+                        <h3>State PAYE Actualization</h3>
+
+                        <p>
+                            An enterprise revenue intelligence and compliance dashboard.
+                        </p>
+
+                        <a href="delta-paye.html" class="card-link">
+                            View Case Study
+                            <span aria-hidden="true">↗</span>
+                        </a>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <div
+        class="toast-message"
+        id="site-toast"
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+    ></div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
