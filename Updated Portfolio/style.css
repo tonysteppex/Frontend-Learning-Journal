@@ -238,24 +238,6 @@ p {
     flex-shrink: 0;
 }
 
-.brand-monogram {
-    display: grid;
-    place-items: center;
-
-    width: 40px;
-    height: 40px;
-
-    color: #F9F7F1;
-    background: var(--text-color);
-
-    border-radius: 13px;
-
-    font-family: var(--heading-font);
-    font-weight: 800;
-    font-size: 15px;
-    letter-spacing: -.08em;
-}
-
 .brand-name {
     font-family: var(--heading-font);
     font-size: 17px;
@@ -1343,6 +1325,36 @@ html[data-theme="dark"] .note-mark {
     margin-top: auto;
 }
 
+/* Fix project suggestion images on desktop and mobile */
+.card .card-image-link {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.card .card-image-wrap,
+.card .card-image-wrap.card-image-tall {
+    position: relative;
+    width: 100%;
+    height: auto !important;
+    min-height: 0;
+    aspect-ratio: 4 / 3 !important;
+    overflow: hidden;
+}
+
+.card .card-img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: none;
+    object-fit: cover !important;
+    object-position: center;
+}
+
 /* Remove previous featured and wide layout overrides */
 .project-grid > .card-featured,
 .project-grid > .card-wide {
@@ -1364,6 +1376,11 @@ html[data-theme="dark"] .note-mark {
 
     .project-grid .card-content {
         padding: 18px;
+    }
+
+    .card .card-image-wrap,
+    .card .card-image-wrap.card-image-tall {
+        aspect-ratio: 16 / 10 !important;
     }
 }
 
@@ -1858,7 +1875,6 @@ html[data-theme="dark"] .note-mark {
 
     object-fit: contain;
     opacity: .72;
-    filter: grayscale(1);
 
     transition:
         opacity var(--motion-standard),
@@ -1866,14 +1882,15 @@ html[data-theme="dark"] .note-mark {
         transform var(--motion-standard);
 }
 
-.skill-icon:hover {
-    opacity: 1;
-    filter: grayscale(0);
-    transform: translateY(-3px);
+/* Dark mode: change the tile, not the logo */
+[data-theme="dark"] .tools-grid .tool-icon,
+.dark-mode .tools-grid .tool-icon {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.14);
 }
 
+
 html[data-theme="dark"] .skill-icon {
-    filter: grayscale(1) brightness(0) invert(1);
     opacity: .65;
 }
 
@@ -2067,6 +2084,21 @@ html[data-theme="dark"] .btn-outline-light:hover {
     font-size: 11px;
 
     overflow-wrap: anywhere;
+}
+
+.copy-icon {
+    display: inline-grid;
+    place-items: center;
+
+    width: 18px;
+    height: 18px;
+
+    color: #fff!important;
+    font-size: 12px;
+
+    transition:
+        color var(--motion-standard),
+        transform var(--motion-standard);
 }
 
 html[data-theme="dark"] .contact-email {
@@ -2307,6 +2339,37 @@ html[data-theme="dark"] .footer-icon {
 
     position: static;
     transform: none !important;
+}
+
+/* Keep the project hero image within the page margins */
+main#main.new-project-container .parallax-container {
+    position: relative;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    left: auto !important;
+    right: auto !important;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+/* Fill the image frame without overflowing */
+main#main.new-project-container .parallax-container .parallax-img {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Prevent horizontal overflow on smaller screens */
+@media (max-width: 768px) {
+    main#main.new-project-container .parallax-container {
+        border-radius: 16px;
+    }
 }
 
 .project-accomplishments {
