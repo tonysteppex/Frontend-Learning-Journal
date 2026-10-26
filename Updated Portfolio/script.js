@@ -1,7 +1,10 @@
 (() => {
+    'use strict';
+
     const EMAIL = 'stephentony77@gmail.com';
     const root = document.documentElement;
 
+    // Theme management
     function setTheme(theme) {
         const nextTheme = theme === 'dark' ? 'dark' : 'light';
 
@@ -47,6 +50,7 @@
         setTheme(savedTheme || 'light');
     }
 
+    // Marquee duplication for infinite scrolling effect
     function initializeMarquees() {
         document.querySelectorAll('.marquee-content').forEach((track) => {
             if (track.dataset.duplicated === 'true') return;
@@ -73,6 +77,7 @@
         });
     }
 
+    // Toast notification for copy action
     function setToast(message) {
         let toast = document.getElementById('site-toast');
 
@@ -97,6 +102,7 @@
         }, 2600);
     }
 
+    // Copy text to clipboard with fallback
     async function copyText(text) {
         try {
             if (navigator.clipboard && window.isSecureContext) {
@@ -130,50 +136,158 @@
         }
     }
 
-    function loadComponent(elementId, filePath) {
+    // Load external HTML components (e.g., nav, footer)
+    const fallbackComponents = {
+        'nav-placeholder': `
+            <nav class="navbar" aria-label="Main navigation">
+
+                <a href="index.html" class="brand-link"
+                   aria-label="Tony Stephen, home">
+                    <span class="brand-name">
+                        Tony Stephen<span class="brand-period">.</span>
+                    </span>
+                </a>
+
+                <div class="nav-links">
+                    <a href="index.html#projects">Work</a>
+                    <a href="index.html#skills">Capabilities</a>
+                    <a href="index.html#about">About</a>
+                </div>
+
+                <div class="nav-actions">
+
+                    <button
+                        type="button"
+                        class="icon-button theme-toggle"
+                        data-theme-toggle
+                        aria-label="Switch theme"
+                        title="Switch theme">
+                        <span class="theme-toggle-icon"
+                              aria-hidden="true">◐</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="nav-copy-button"
+                        data-copy-email="${EMAIL}">
+                        Copy Email <span aria-hidden="true">↗</span>
+                    </button>
+
+                </div>
+            </nav>
+        `,
+
+        'footer-placeholder': `
+            <footer class="footer-section">
+                <div class="footer-content page-container">
+
+                    <a href="index.html" class="footer-brand">
+                        Tony Stephen<span>.</span>
+                    </a>
+
+                    <p class="footer-note">
+                        Product Design · Front-End Development ·
+                        AI &amp; Automation
+                    </p>
+
+                    <div class="footer-links-wrap">
+
+                        <a href="https://github.com/tonysteppex"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            GitHub ↗
+                        </a>
+
+                        <a href="https://www.linkedin.com/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            LinkedIn ↗
+                        </a>
+
+                        <a href="mailto:${EMAIL}">
+                            Email ↗
+                        </a>
+
+                    </div>
+
+                    <div class="footer-bottom">
+                        <p>
+                            © <span id="current-year"></span>
+                            Tony Stephen. All rights reserved.
+                        </p>
+
+                        <a href="#main">Back to top ↑</a>
+                    </div>
+
+                </div>
+            </footer>
+        `
+    };
+
+    // Load external HTML components into placeholders
+    async function loadComponent(elementId, filePath) {
         const target = document.getElementById(elementId);
 
         if (!target) return;
 
-        fetch(filePath)
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error(
-                        `Could not load ${filePath} (${response.status})`
-                    );
-                }
-
-                return response.text();
-            })
-            .then((html) => {
-                target.innerHTML = html;
-
-                if (elementId === 'footer-placeholder') {
-                    const year = target.querySelector('#current-year');
-
-                    if (year) {
-                        year.textContent = new Date().getFullYear();
-                    }
-                }
-
-                if (elementId === 'nav-placeholder') {
-                    setTheme(root.dataset.theme || 'light');
-                }
-            })
-            .catch((error) => {
-                console.warn(
-                    error.message,
-                    'Make sure the site is opened through a local server, not directly from file://.'
-                );
+        try {
+            const response = await fetch(filePath, {
+                cache: 'no-cache'
             });
+
+            if (!response.ok) {
+                throw new Error(
+                    `${filePath} returned HTTP ${response.status}`
+                );
+            }
+
+            const html = await response.text();
+
+            if (!html.trim()) {
+                throw new Error(`${filePath} is empty`);
+            }
+
+            target.innerHTML = html;
+
+        } catch (error) {
+            console.warn(
+                `Unable to load ${filePath}. Using fallback component.`,
+                error
+            );
+
+            const fallback = fallbackComponents[elementId];
+
+            if (fallback) {
+                target.innerHTML = fallback;
+            }
+        }
+
+        if (elementId === 'footer-placeholder') {
+            const year = target.querySelector('#current-year');
+
+            if (year) {
+                year.textContent = new Date().getFullYear();
+            }
+        }
+
+        if (elementId === 'nav-placeholder') {
+            // Reapply the active theme to the newly inserted controls.
+            setTheme(root.dataset.theme || 'light');
+        }
     }
+
+    /* =========================================
+       SCROLL REVEALS
+    ========================================= */
 
     function initializeReveal() {
         const revealItems = document.querySelectorAll('[data-reveal]');
 
         if (
             !('IntersectionObserver' in window) ||
-            window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            window.matchMedia(
+                '(prefers-reduced-motion: reduce)'
+            ).matches
         ) {
             revealItems.forEach((item) => {
                 item.classList.add('is-visible');
@@ -187,7 +301,11 @@
                 entries.forEach((entry) => {
                     if (!entry.isIntersecting) return;
 
-                    entry.target.classList.add('will-reveal', 'is-visible');
+                    entry.target.classList.add(
+                        'will-reveal',
+                        'is-visible'
+                    );
+
                     currentObserver.unobserve(entry.target);
                 });
             },
@@ -203,65 +321,105 @@
         });
     }
 
-    document.addEventListener('click', (event) => {
-        const themeButton = event.target.closest('[data-theme-toggle]');
+    /* =========================================
+       PROJECT FILTERS
+    ========================================= */
 
-        if (themeButton) {
-            setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
-            return;
-        }
+    function initializeProjectFilters() {
+        document.addEventListener('click', (event) => {
+            const filterButton = event.target.closest(
+                '[data-project-filter]'
+            );
 
-        const filterButton = event.target.closest('[data-project-filter]');
+            if (!filterButton) return;
 
-        if (filterButton) {
             const category =
                 filterButton.getAttribute('data-project-filter') || 'all';
 
             const projectGrid = document.getElementById('project-grid');
 
-            if (projectGrid) {
-                projectGrid.querySelectorAll('[data-category]').forEach((card) => {
-                    card.hidden =
-                        category !== 'all' &&
-                        card.getAttribute('data-category') !== category;
-                });
+            if (!projectGrid) return;
 
-                projectGrid
-                    .querySelectorAll('[data-category]:not([hidden])')
-                    .forEach((card) => {
-                        card.classList.remove('is-visible');
+            projectGrid.querySelectorAll('[data-category]').forEach((card) => {
+                const matches =
+                    category === 'all' ||
+                    card.getAttribute('data-category') === category;
 
-                        requestAnimationFrame(() => {
-                            card.classList.add('is-visible');
-                        });
-                    });
-            }
-
-            document.querySelectorAll('[data-project-filter]').forEach((button) => {
-                const active = button === filterButton;
-
-                button.classList.toggle('is-active', active);
-                button.setAttribute('aria-pressed', String(active));
+                card.hidden = !matches;
             });
 
-            return;
-        }
+            document.querySelectorAll('[data-project-filter]').forEach(
+                (button) => {
+                    const active = button === filterButton;
 
-        const copyButton = event.target.closest('[data-copy-email]');
-
-        if (copyButton) {
-            event.preventDefault();
-
-            copyText(
-                copyButton.getAttribute('data-copy-email') || EMAIL
+                    button.classList.toggle('is-active', active);
+                    button.setAttribute(
+                        'aria-pressed',
+                        String(active)
+                    );
+                }
             );
-        }
-    });
+        });
+    }
 
-    initializeTheme();
-    initializeMarquees();
-    initializeReveal();
+    /* =========================================
+       GLOBAL CLICK HANDLERS
 
-    loadComponent('nav-placeholder', 'nav.html');
-    loadComponent('footer-placeholder', 'footer.html');
+       These work with both the original
+       components and dynamically loaded fallbacks.
+    ========================================= */
+
+    function initializeClickHandlers() {
+        document.addEventListener('click', (event) => {
+            const themeButton = event.target.closest(
+                '[data-theme-toggle]'
+            );
+
+            if (themeButton) {
+                setTheme(
+                    root.dataset.theme === 'dark' ? 'light' : 'dark'
+                );
+
+                return;
+            }
+
+            const copyButton = event.target.closest('[data-copy-email]');
+
+            if (copyButton) {
+                event.preventDefault();
+
+                copyText(
+                    copyButton.getAttribute('data-copy-email') || EMAIL
+                );
+            }
+        });
+    }
+
+    /* =========================================
+       INITIALIZE SITE
+    ========================================= */
+
+    async function initializeSite() {
+        initializeTheme();
+        initializeMarquees();
+        initializeReveal();
+        initializeProjectFilters();
+        initializeClickHandlers();
+
+        await Promise.all([
+            loadComponent('nav-placeholder', 'nav.html'),
+            loadComponent('footer-placeholder', 'footer.html')
+        ]);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener(
+            'DOMContentLoaded',
+            initializeSite,
+            { once: true }
+        );
+    } else {
+        initializeSite();
+    }
+
 })();
