@@ -1,3 +1,0 @@
-[build]
-  command = "echo 'Publishing static files directly'"
-  publish = "."
